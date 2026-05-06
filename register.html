@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - منصة المعامل الذكية</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-container">
+            <!-- الشعار والترحيب -->
+            <div class="login-header">
+                <div class="university-logo">
+                    <i class="fas fa-university"></i>
+                    <h1>جامعة الأمير سطام بن عبدالعزيز</h1>
+                </div>
+                <h2>منصة المعامل الذكية</h2>
+                <p class="welcome-text">مرحباً بك في المنصة الرسمية لإدارة المعامل الجامعية</p>
+            </div>
+
+            <!-- نموذج التسجيل -->
+<form class="login-form" id="loginForm" action="register.php" method="POST">                <div class="form-title">
+                    <h3><i class="far fa-user-circle"></i> تسجيل الدخول إلى المنصة</h3>
+                    <p>أدخل بياناتك الجامعية للوصول إلى الخدمات</p>
+                </div>
+
+                <div class="form-grid">
+                    <!-- الاسم الكامل -->
+                    <div class="input-group">
+                        <label for="full_name">
+                            <i class="far fa-user"></i>
+                            الاسم الكامل
+                        </label>
+                        <input type="text" id="full_name" name="full_name" required 
+                               placeholder="أدخل اسمك الكامل كما هو مسجل بالجامعة">
+                    </div>
+
+                    <!-- الرقم الجامعي -->
+                    <div class="input-group">
+                        <label for="student_id">
+                            <i class="far fa-id-card"></i>
+                            الرقم الجامعي
+                        </label>
+                        <input type="text" id="student_id" name="student_id" required 
+                               pattern="[0-9]{9}" maxlength="9"
+                               placeholder="9 أرقام فقط">
+                        <span class="input-hint">(9 خانات)</span>
+                    </div>
+
+                    <!-- البريد الإلكتروني -->
+                    <div class="input-group">
+                        <label for="email">
+                            <i class="far fa-envelope"></i>
+                            البريد الإلكتروني الجامعي
+                        </label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="example@university.edu.sa">
+                    </div>
+
+                    <!-- رقم الجوال -->
+                    <div class="input-group">
+                        <label for="phone">
+                                                       <i class="far fa-phone"></i>
+                            رقم الجوال
+                        </label>
+                        <input type="tel" id="phone" name="phone" required 
+                               pattern="05[0-9]{8}" maxlength="10"
+                               placeholder="05XXXXXXXX">
+                        <span class="input-hint">يبدأ بـ 05</span>
+                    </div>
+
+                    <!-- الكلية -->
+                    <div class="input-group">
+                        <label for="college">
+                            <i class="far fa-graduation-cap"></i>
+                            الكلية
+                        </label>
+                        <select id="college" name="college" required class="modern-select">
+                            <option value="" disabled selected>اختر كليتك</option>
+                            <option value="كلية الهندسة">كلية الهندسة</option>
+                            <option value="كلية الهندسة وعلوم الحاسب">كلية الهندسة وعلوم الحاسب</option>
+                            <option value="كلية الطب">كلية الطب</option>
+                            <option value="كلية العلوم">كلية العلوم</option>
+                            <option value="كلية العلوم والدراسات الإنسانية">كلية العلوم والدراسات الإنسانية</option>
+                        </select>
+                    </div>
+
+                    <!-- التخصص -->
+                    <div class="input-group">
+                        <label for="specialization">
+                            <i class="far fa-book"></i>
+                            التخصص (اختياري)
+                        </label>
+                        <input type="text" id="specialization" name="specialization" 
+                               placeholder="مثال: علوم الحاسب">
+                    </div>
+
+                    <!-- كلمة المرور -->
+                    <div class="input-group">
+                        <label for="password">
+                            <i class="far fa-lock"></i>
+                            كلمة المرور
+                        </label>
+                        <input type="password" id="password" name="password" required 
+                               placeholder="أدخل كلمة مرور قوية">
+                    </div>
+
+                    <!-- تأكيد كلمة المرور -->
+                    <div class="input-group">
+                        <label for="confirm_password">
+                            <i class="far fa-lock"></i>
+                            تأكيد كلمة المرور
+                        </label>
+                        <input type="password" id="confirm_password" name="confirm_password" required 
+                               placeholder="أعد إدخال كلمة المرور">
+                    </div>
+                </div>
+
+                <!-- اتفاقية الاستخدام -->
+                <div class="terms-agreement">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span class="checkmark"></span>
+                        أوافق على <a href="#" class="terms-link">شروط الاستخدام</a> و 
+                        <a href="#" class="terms-link">سياسة الخصوصية</a>
+                    </label>
+                </div>
+
+                <!-- زر التسجيل -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-login">
+                        <i class="fas fa-sign-in-alt"></i>
+                        تسجيل الدخول
+                    </button>
+                </div>
+
+                <!-- روابط مساعدة -->
+                <div class="login-footer">
+                    <div class="help-links">
+                        <a href="#" class="help-link">
+                            <i class="far fa-question-circle"></i>
+                            مساعدة
+                        </a>
+                        <a href="#" class="help-link">
+                            <i class="far fa-headset"></i>
+                            الدعم الفني
+                        </a>
+                        <a href="#" class="help-link">
+                            <i class="far fa-key"></i>
+                            نسيت كلمة المرور؟
+                        </a>
+                    </div>
+                </div>
+            </form>
+
+            <!-- معلومات الأمان -->
+            <div class="security-note">
+                <i class="fas fa-shield-alt"></i>
+                <span>بياناتك محمية ومشفرة وفق أعلى معايير الأمان</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

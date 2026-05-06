@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - منصة المعامل الذكية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #7c9894 0%, #5a7c76 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .login-box {
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        
+        .logo {
+            margin-bottom: 30px;
+        }
+        
+        .logo i {
+            font-size: 50px;
+            color: #5a7c76;
+            margin-bottom: 15px;
+        }
+        
+        .logo h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .logo p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* رسالة الخطأ الجديدة */
+        .error-message {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+            animation: slideDown 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+        }
+        
+        .error-message i {
+            font-size: 20px;
+            color: #dc3545;
+        }
+        
+        .error-message .btn-register {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 10px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+        
+        .error-message .btn-register:hover {
+            background: #c82333;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: #7c9894;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(124, 152, 148, 0.1);
+        }
+        
+        .btn-login {
+            background: linear-gradient(135deg, #7c9894 0%, #5a7c76 100%);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(124, 152, 148, 0.3);
+        }
+        
+        .links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .links a {
+            color: #7c9894;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-box">
+        <div class="logo">
+            <i class="fas fa-university"></i>
+            <h1>منصة المعامل الذكية</h1>
+            <p>جامعة الأمير سطام بن عبدالعزيز</p>
+        </div>
+        
+        <!-- مكان عرض الرسالة -->
+        <div id="errorContainer"></div>
+        
+        <form action="login.php" method="POST">
+            <div class="form-group">
+                <label for="student_id">
+                    <i class="fas fa-id-card"></i> الرقم الجامعي / البريد الإلكتروني
+                </label>
+                <input type="text" id="student_id" name="student_id" required 
+                       placeholder="أدخل الرقم الجامعي أو البريد">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">
+                    <i class="fas fa-lock"></i> كلمة المرور
+                </label>
+                <input type="password" id="password" name="password" required 
+                       placeholder="أدخل كلمة المرور">
+            </div>
+            
+            <button type="submit" class="btn-login">
+                <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+            </button>
+        </form>
+        
+        <div class="links">
+            <a href="register.html">
+                <i class="fas fa-user-plus"></i> إنشاء حساب جديد
+            </a>
+            <a href="#">
+                <i class="fas fa-key"></i> نسيت كلمة المرور؟
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // عرض رسالة الخطأ إذا موجودة في الرابط
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const error = urlParams.get('error');
+            const errorContainer = document.getElementById('errorContainer');
+            
+           if (error === 'not_found') {
+    errorContainer.innerHTML = `
+        <div class="error-message">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>المستخدم غير موجود</span>
+        </div>
+    `;
+} else if (error === 'wrong_password') {
+                errorContainer.innerHTML = `
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>كلمة المرور غير صحيحة! </span>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

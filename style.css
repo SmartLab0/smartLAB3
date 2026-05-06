@@ -1,0 +1,748 @@
+/* style.css - التنسيقات العامة للموقع */
+
+:root {
+    --primary-green: #498178;
+    --dark-green: #327568;
+    --light-green: #3a8a7d;
+    --accent-green: #2f564e;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #495057;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --border-color: #dee2e6;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* الهيدر */
+.main-header {
+    background-color: #017d75; /* تم التعديل */
+    padding: 0 30px;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 115px; /* تم التعديل */
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.university-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.university-logo i {
+    font-size: 32px;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.controls-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--error-color);
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* بطاقة الطالب */
+.student-card-section {
+    margin-bottom: 40px;
+}
+
+.student-profile-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.avatar-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--light-green), var(--primary-green));
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.avatar-overlay i {
+    font-size: 16px;
+}
+
+.student-info {
+    flex: 1;
+}
+
+.student-name {
+    color: var(--dark-green);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.student-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.detail-item i {
+    color: var(--primary-green);
+    font-size: 20px;
+    width: 24px;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.detail-value {
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* الخدمات */
+.services-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    color: var(--dark-green);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-green);
+}
+
+.service-title {
+    color: var(--dark-green);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.service-description {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* التجاوبية */
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 15px;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .student-profile-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .student-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* dropdown للتنبيهات والإعدادات */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 250px;
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-header {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    color: var(--dark-green);
+    background: var(--light-gray);
+}
+
+.dropdown-item {
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-item:hover {
+    background: var(--light-gray);
+}
+
+.dropdown-item.logout {
+    color: var(--error-color);
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--error-color);
+    color: white;
+    font-size: 11px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+/* === تعديلات الأيقونات فقط === */
+
+/* 1. تغيير لون وأسلوب أيقونات الخدمات */
+.services-grid .service-icon {
+    background: white !important;
+    border: 2px solid #e0e0e0 !important;
+}
+
+.services-grid .service-card:nth-child(1) .service-icon i {
+    color: #7c9894 !important;
+    font-size: 28px;
+}
+
+.services-grid .service-card:nth-child(2) .service-icon i {
+    color: #7c9894 !important;
+    font-size: 28px;
+}
+
+.services-grid .service-card:nth-child(3) .service-icon i {
+    color: #7c9894 !important;
+    font-size: 28px;
+}
+
+.services-grid .service-card:nth-child(4) .service-icon i {
+    color: #7c9894 !important;
+    font-size: 28px;
+}
+
+.services-grid .service-card:hover .service-icon {
+    border-color: var(--primary-green) !important;
+    transform: scale(1.1);
+}
+
+.services-grid .service-card:hover .service-icon i {
+    color: var(--primary-green) !important;
+}
+
+/* 2. تصميم أزرار الهيدر */
+.controls-section .icon-btn {
+    width: 45px;
+    height: 45px;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    background: transparent !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.controls-section .icon-btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: white !important;
+    transform: scale(1.05);
+}
+
+.icon-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.icon-btn:disabled:hover {
+    background: transparent !important;
+    transform: none !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 3. صورة المستخدم */
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-link:hover .avatar-container {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+/* ===============================
+   تنسيق التقويم – الصفحة الرئيسية
+   =============================== */
+
+.calendar-section{
+    margin-top:60px;
+}
+
+.calendar-container{
+    background:#fff;
+    padding:30px;
+    border-radius:16px;
+    box-shadow: var(--shadow-md);
+    max-width:700px;
+}
+
+/* الهيدر (الشهر والسنة) */
+.calendar-controls{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.calendar-selects{
+    display:flex;
+    gap:10px;
+}
+
+.calendar-selects select{
+    padding:8px 14px;
+    border-radius:8px;
+    border:1px solid var(--border-color);
+    font-family: inherit;
+    font-size:14px;
+}
+
+/* أسماء الأيام */
+.calendar-week{
+    display:grid;
+    grid-template-columns: repeat(7,1fr);
+    margin-bottom:10px;
+}
+
+.week-day{
+    text-align:center;
+    font-weight:600;
+    color:var(--dark-green);
+}
+
+/* شبكة الأيام */
+.calendar-days{
+    display:grid;
+    grid-template-columns: repeat(7,1fr);
+    gap:12px;
+}
+
+/* اليوم */
+.day{
+    height:70px;
+    border-radius:14px;
+    background:#f7f9f9;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.2s;
+}
+
+.day:hover{
+    background:#eaf3f2;
+}
+
+/* الأيام الفارغة */
+.day.empty{
+    background:transparent;
+    cursor:default;
+}
+
+/* رقم اليوم */
+.day-number{
+    z-index:2;
+}
+
+/* اليوم المحجوز (الدائرة الخضراء) */
+.day.booked{
+    background:transparent;
+}
+
+.day.booked::before{
+    content:"";
+    width:42px;
+    height:42px;
+    background:#28a745;
+    border-radius:50%;
+    position:absolute;
+    z-index:1;
+}
+
+.day.booked .day-number{
+    color:white;
+    font-weight:700;
+}
+
+/* مفاتيح الألوان تحت التقويم */
+.calendar-legend{
+    margin-top:25px;
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:14px;
+}
+
+.legend-color{
+    width:16px;
+    height:16px;
+    border-radius:4px;
+}
+
+.legend-color.available{
+    background:#f7f9f9;
+    border:1px solid #ccc;
+}
+
+.legend-color.booked{
+    background:#28a745;
+}
+
+.legend-color.lecture{
+    background:#ccc;
+}
+.calendar-week{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    margin-bottom:10px;
+}
+
+.week-day{
+    text-align:center;
+    font-weight:600;
+    color:#005f59;
+}
+
+.calendar-days{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:12px;
+}
+
+.day{
+    height:70px;
+    border-radius:14px;
+    background:#f7f9f9;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    font-weight:600;
+}
+
+.day.empty{
+    background:transparent;
+}
+
+.day.booked::before{
+    content:"";
+    width:42px;
+    height:42px;
+    background:#28a745;
+    border-radius:50%;
+    position:absolute;
+}
+
+.day-number{
+    position:relative;
+    z-index:2;
+    color:#333;
+}
+
+.day.booked .day-number{
+    color:#fff;
+}
+
+.header-logo{
+    width:100px !important;
+    height:100px !important;
+    border-radius:50% !important;
+    object-fit:cover !important;
+    display:block;
+}
+/* إضافة إلى style.css */
+@media (max-width: 480px) {
+    .chat-window {
+        height: 70vh !important;
+    }
+    
+    .message-content {
+        max-width: 85% !important;
+    }
+    
+    .service-card {
+        padding: 20px !important;
+    }
+    
+    .student-profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* تحسين الأزرار على الجوال */
+    .btn-send, .btn-select-image, .btn-confirm {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+/* نافذة تأكيد إلغاء الحجز */
+.custom-confirm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.confirm-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 300px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.confirm-content h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.confirm-content p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.confirm-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.confirm-yes, .confirm-no {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    flex: 1;
+}
+
+.confirm-yes {
+    background: #017d75;
+    color: white;
+}
+
+.confirm-yes:hover {
+    background: #005f59;
+}
+
+.confirm-no {
+    background: #e9ecef;
+    color: #495057;
+    border: 1px solid #dee2e6;
+}
+
+.confirm-no:hover {
+    background: #dee2e6;
+}
